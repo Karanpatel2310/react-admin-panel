@@ -100,35 +100,35 @@ class Create extends Component {
     };
 
     this.setState({
-      validFirstName: isEmail(this.state.firstname),
-      validLastName: isEmail(this.state.lastname),
+      validFirstName: this.state.firstname,
+      validLastName: this.state.lastname,
       validEmail: isEmail(this.state.email),
-      validPassword: (this.state.password.length),
+      validPassword: (this.state.password.length >= 5),
       validUserName: (this.state.username.length)
     });
 
     if (isEmail(this.state.email) && this.state.password.length >= 5 && this.state.firstname.length > 0 && this.state.lastname.length > 0 && this.state.username.length >= 0) {
-      console.log('INVALID FORM ERROR', data);
-      // this
-      //   .props
-      //   .Login(data)
-      //   .then((response) => {
-      //     if (response.payload.status === 200) {
-      //       const token = response.payload.data.token;
-      //       const $window = window;
-      //       $window
-      //         .localStorage
-      //         .setItem('auth-token', token);
-      //       this.setState({ redirect: true });
-      //     } else {
-      //       this.setState({ serverError: true });
-      //     }
-      // });
+      console.log('VALID FORM ERROR', data);
+      this
+        .props
+        .Login(data)
+        .then((response) => {
+          console.log('response',response);
+          // if (response.payload.status === 200) {
+          //   const token = response.payload.data.token;
+          //   const $window = window;
+          //   $window
+          //     .localStorage
+          //     .setItem('auth-token', token);
+          //   this.setState({ redirect: true });
+          // } else {
+          //   this.setState({ serverError: true });
+          // }
+      });
     }
   };
 
   onLoginSubmit(event) {
-    console.log('event', event);
     event.preventDefault();
   };
 

@@ -8,7 +8,7 @@ import Dashboard from '../../views/Dashboard/Dashboard';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import Sidebar from '../../components/Sidebar/Sidebar';
-import User from '../../views/User/User';
+import UserList from '../../views/User/List/List';
 import Create from '../../views/User/Create/Create';
 
 class Full extends Component {
@@ -24,8 +24,7 @@ class Full extends Component {
               <Switch>
                 <Route path="/dashboard" name="Dashboard" component={Dashboard} />
                 <Route path="/user/create" name="Create" component={Create} />
-                <Route path="/user" name="User" component={User}>
-                </Route>
+                <Route path="/user" name="User" component={UserList}/>
                 <Redirect from="/" to="/dashboard" />
               </Switch>
             </Container>

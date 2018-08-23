@@ -1,7 +1,8 @@
 // import './polyfill'
+// import { createStore } from 'redux';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter, Route, Switch } from 'react-router-dom';
 
 // Styles
 // Import Flag Icons Set
@@ -17,6 +18,8 @@ import '../scss/core/_dropdown-menu-right.scss'
 
 // Containers
 import Full from './containers/Full/Full'
+
+// const store = createStore();
 
 ReactDOM.render((
   <HashRouter>
